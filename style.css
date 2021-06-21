@@ -1,0 +1,264 @@
+/* font-family: 'Kumbh Sans', sans-serif; */
+html {
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(
+    to bottom,
+    hsl(273, 75%, 66%),
+    hsl(240, 73%, 65%)
+  );
+  /* To center tings */
+  position: relative;
+}
+
+main {
+  bottom: 50%;
+  right: 50%;
+  height: 450px;
+  width: 750px;
+  background: white;
+  border-radius: 25px;
+  display: flex;
+  /* to center */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* For Q and A */
+
+.container {
+  padding: 0px 15px;
+}
+
+header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 25px 0px;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.question > h1 {
+  color: hsl(238, 29%, 16%);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.question > h1:hover {
+  color: hsl(14, 88%, 65%);
+}
+.question .icon {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.answer {
+  display: none;
+}
+
+/* toggle */
+
+.active .question {
+  border: none;
+}
+
+.active .question > h1 {
+  font-weight: 700;
+}
+
+.active .question > h1:hover {
+  color: hsl(238, 29%, 16%);
+}
+
+.active .icon {
+  transform: rotate(180deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.active .answer {
+  display: block;
+  border-bottom: 1px solid lightslategray;
+}
+
+/* desktop version */
+
+@media only screen and (min-width: 600px) {
+  main {
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  main .graphic-design {
+    width: 45%;
+    height: 100%;
+    display: inline-block;
+    user-select: none;
+  }
+
+  main .q-and-a {
+    display: inline-block;
+    width: 55%;
+    height: 100%;
+  }
+
+  .answer {
+    padding: 10px;
+  }
+
+  /* for background pattern */
+  main section .background-pattern {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  main section .background-pattern > img {
+    width: 250%;
+    position: relative;
+    top: -15%;
+  }
+
+  /* for woman */
+  main section .woman {
+    top: -85%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  main section .woman > img {
+    width: 120%;
+  }
+
+  /* for box */
+
+  .box {
+    position: absolute;
+    top: 60%;
+    left: -1.5%;
+    transform: translate(-50%, -50%);
+  }
+
+  .woman-mobile > img {
+    display: none;
+  }
+
+  .pattern-mobile > img {
+    display: none;
+  }
+
+  .attribution {
+    opacity: 0;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  .attribution:hover {
+    opacity: 1;
+  }
+}
+
+/* Mobile version */
+/* @media only screen and (max-width: 600px) */
+
+@media only screen and (max-width: 600px) {
+  main {
+    height: 65%;
+    width: 80%;
+    flex-direction: column;
+    box-shadow: 0 30px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .desktop > img {
+    display: none;
+  }
+
+  .q-and-a {
+    height: 80%;
+    display: block;
+  }
+
+  .answer {
+    padding: 0;
+  }
+
+  .graphic-design {
+    display: block;
+    width: 100%;
+    height: 20%;
+  }
+
+  .woman-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -92%;
+    left: -3%;
+  }
+
+  .woman-mobile > img {
+    width: 82%;
+  }
+
+  .pattern-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -170%;
+    left: 1%;
+  }
+  .pattern-mobile > img {
+    width: 75%;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sub-container {
+    width: 100%;
+  }
+}
+
+/* attribution*/
+.attribution {
+  height: 50px;
+  width: 100vw;
+  position: absolute;
+  font-size: 11px;
+  text-align: center;
+  bottom: 0;
+}
+
+.attribution a {
+  color: hsl(230, 23%, 95%);
+}
